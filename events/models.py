@@ -12,8 +12,10 @@ class Event(models.Model):
     )
     attendance_count = models.IntegerField(default=0)
     fb_url = models.CharField(
+        'Facebook Event URL',
         max_length=255,
-        default=''
+        default='',
+        blank=True
     )
 
     def __str__(self):
