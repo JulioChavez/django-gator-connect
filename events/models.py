@@ -6,8 +6,12 @@ import datetime
 class Event(models.Model):
     event_name = models.CharField(max_length=200)
     event_description = models.CharField(max_length=200)
-    event_date_time = models.DateTimeField(
-        'Date and Time',
+    event_start_date_time = models.DateTimeField(
+        'Start Date / Time',
+        default=datetime.datetime.now
+    )
+    event_end_date_time = models.DateTimeField(
+        'End Date / Time',
         default=datetime.datetime.now
     )
     attendance_count = models.IntegerField(default=0)

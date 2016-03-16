@@ -16,7 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+import events
+
 urlpatterns = [
     url(r'^events/', include('events.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^$', events.views.index, name='index'),
 ]
