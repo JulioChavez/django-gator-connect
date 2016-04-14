@@ -8,11 +8,11 @@ class Event(models.Model):
     event_description = models.CharField(max_length=200)
     event_start_date_time = models.DateTimeField(
         'Start Date / Time',
-        default=datetime.datetime.now
+        default=lambda: timezone.localtime(timezone.now())
     )
     event_end_date_time = models.DateTimeField(
         'End Date / Time',
-        default=datetime.datetime.now
+        default=lambda: timezone.localtime(timezone.now())
     )
     attendance_count = models.IntegerField(default=0)
     fb_url = models.CharField(

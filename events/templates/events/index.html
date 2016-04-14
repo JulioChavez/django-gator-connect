@@ -188,6 +188,15 @@
     @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
     @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
 
+    .info > h2 {
+        color: black;
+        text-shadow: none;
+    }
+    .info > p {
+        color: black;
+        text-shadow: none;
+    }
+
     .event-list {
 		list-style: none;
 		font-family: 'Lato', sans-serif;
@@ -388,7 +397,7 @@
 
             <div class="masthead clearfix">
                 <div class="inner">
-                    <h3 class="masthead-brand">Cover</h3>
+                    <h3 class="masthead-brand">Gator Connect</h3>
                     <nav>
                         <ul class="nav masthead-nav">
                             <li class="active"><a href="#">Home</a></li>
@@ -407,7 +416,7 @@
         </div>
 
         {% if latest_event_list %}
-
+{% load tz %}
             {% for event in latest_event_list %}
             <div class="container">
                 <div class="row">
@@ -418,16 +427,16 @@
                                     <span class="day">{{ event.event_start_date_time.day }}</span>
                                     <span class="month">{{ event.event_start_date_time.month }}</span>
                                     <span class="year">{{ event.event_start_date_time.year }}</span>
-                                    <span class="time">{{ event.event_start_date_time.time }}</span>
+                                    <span class="time">{{ event.event_start_date_time|time}}</span>
                                 </time>
-                                <img alt="My 24th Birthday!" src="https://farm5.staticflickr.com/4150/5045502202_1d867c8a41_q.jpg" />
+                                <!-- <img alt="" src="" /> -->
                                 <div class="info">
                                     <h2 class="title">{{ event.event_name }}</h2>
                                     <p class="desc">{{ event.event_description }}</p>
                                     <ul>
                                         <li style="width:33%;">{{ event.attendance_count }}<span class="glyphicon glyphicon-ok"></span></li>
-                                        <li style="width:34%;">3 <span class="fa fa-question"></span></li>
-                                        <li style="width:33%;">103 <span class="fa fa-envelope"></span></li>
+                                        <!-- <li style="width:34%;">3 <span class="fa fa-question"></span></li>
+                                        <li style="width:33%;">103 <span class="fa fa-envelope"></span></li> -->
                                     </ul>
                                 </div>
                                 <div class="social">
