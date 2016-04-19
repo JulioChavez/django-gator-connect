@@ -6,13 +6,15 @@ import datetime
 class Event(models.Model):
     event_name = models.CharField(max_length=200)
     event_description = models.CharField(max_length=200)
+    street = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+    state = models.CharField(max_length=20)
+    zip_code = models.IntegerField()
     event_start_date_time = models.DateTimeField(
-        'Start Date / Time',
-        default=lambda: timezone.localtime(timezone.now())
+        'Start Date / Time'
     )
     event_end_date_time = models.DateTimeField(
-        'End Date / Time',
-        default=lambda: timezone.localtime(timezone.now())
+        'End Date / Time'
     )
     attendance_count = models.IntegerField(default=0)
     fb_url = models.CharField(
