@@ -432,6 +432,12 @@
                                 <!-- <img alt="" src="" /> -->
                                 <div class="info">
                                     <h2 class="title">{{ event.event_name }}</h2>
+                                    <h5><div class="street">{{ event.street }}</div>
+                                    <div class="city">{{ event.city }}</div>
+                                    <div class="state">{{ event.state }}</div>
+                                    <div class="zip_code">{{ event.zip_code }}</div></h5>
+
+                                    <br>
                                     <p class="desc">{{ event.event_description }}</p>
                                     <ul>
                                         <li style="width:33%;">{{ event.attendance_count }}<span class="glyphicon glyphicon-ok"></span></li>
